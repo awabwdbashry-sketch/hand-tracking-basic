@@ -272,3 +272,9 @@ If you find this project useful or interesting, consider giving the repository a
 ---
 
 **Built with 🐍 Python, 📷 OpenCV, and ✋ MediaPipe.**
+## 👨‍💻 Developer
+
+**Awab Bashary | AwabBuilds**
+
+GitHub: **awabwdbashry-sketch**
+
