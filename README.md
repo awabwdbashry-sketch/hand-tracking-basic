@@ -1,46 +1,105 @@
-# Air Draw ✋🎨
+# Hand Tracking Basic ✋
 
-A real-time virtual drawing project that allows you to draw in the air using your hand and webcam.
+A real-time hand tracking application built with **Python, OpenCV, and MediaPipe**.
 
-The project uses **OpenCV** and **MediaPipe** to track the hand and detect finger movements, allowing the index finger to act as a virtual drawing tool.
+The project uses a webcam to detect and track hand landmarks in real time, then displays the detected hand structure directly on the video feed.
+
+This project is the basic foundation for the other hand-tracking projects in this collection.
+
+---
 
 ## ✨ Features
 
-- Real-time hand tracking
-- Draw using your index finger
+- Real-time hand detection
+- Real-time hand landmark tracking
+- Detection of hand structure and connections
 - Webcam-based interaction
-- Virtual air drawing
-- Real-time drawing canvas
-- Hand landmark detection
-- Smooth finger movement tracking
-- Interactive drawing experience
+- Live visual feedback
+- Supports hand tracking using MediaPipe
+- Lightweight and simple implementation
+- Foundation for more advanced hand gesture projects
+
+---
 
 ## 🛠️ Technologies
 
-- Python
-- OpenCV
-- MediaPipe
-- NumPy
+- **Python**
+- **OpenCV**
+- **MediaPipe**
 
-## ⚙️ How It Works
+---
 
-The webcam captures your hand in real time.
+## 🧠 How It Works
 
-**MediaPipe Hands** detects the hand landmarks and tracks the position of the fingers.
+The application captures video from the computer's webcam using OpenCV.
 
-The application uses the index finger position as a virtual drawing pointer.
+Each video frame is processed by **MediaPipe Hands**, which detects the hand and identifies its landmarks.
 
-As the finger moves, the application follows its position and creates a drawing on the virtual canvas.
+MediaPipe provides multiple landmark points representing different parts of the hand, such as:
 
-This allows you to draw without touching a physical screen or using a mouse.
+- Wrist
+- Thumb
+- Index finger
+- Middle finger
+- Ring finger
+- Pinky finger
 
-## 📦 Installation
+The application then draws the detected landmarks and the connections between them directly on the webcam frame.
+
+The result is a real-time visualization of the user's hand structure.
+
+---
+
+## 📷 Camera Processing
+
+The webcam is opened using OpenCV:
+
+```python
+cv2.VideoCapture(0)
+
+The captured frames are continuously processed while the application is running.
+
+MediaPipe analyzes each frame and returns the detected hand landmarks.
+
+The processed frame is then displayed in a window.
+
+✋ Hand Landmarks
+
+MediaPipe Hands represents a detected hand using a collection of landmark points.
+
+These points allow the application to understand the structure and position of the hand.
+
+The landmarks can later be used as the foundation for:
+
+Finger counting
+Gesture recognition
+Air drawing
+Virtual mouse control
+Hand-controlled games
+Human-computer interaction
+🔄 Processing Pipeline
+Webcam
+   ↓
+Capture Video Frame
+   ↓
+OpenCV
+   ↓
+MediaPipe Hands
+   ↓
+Detect Hand Landmarks
+   ↓
+Draw Hand Connections
+   ↓
+Display Result
+📦 Installation
 
 Clone the repository:
 
-```bash
-git clone https://github.com/awabwdbashry-sketch/air-draw.git
-cd air-draw
+git clone https://github.com/awabwdbashry-sketch/hand-tracking-basic.git
+
+Move into the project directory:
+
+cd hand-tracking-basic
 
 Install the required dependencies:
 
@@ -49,48 +108,71 @@ pip install -r requirements.txt
 
 Run the application:
 
-python air_draw.py
+python main.py
 
-Allow the application to access your webcam.
+After starting the application:
 
-Place your hand in front of the camera and use your index finger to interact with the virtual drawing canvas.
-
-📋 Requirements
-Python 3.9+
+Your webcam will open.
+Place your hand in front of the camera.
+MediaPipe will detect the hand.
+The hand landmarks will appear on the video.
+Move your hand to see the landmarks follow your movement.
+💻 Requirements
+Python 3.9 or newer
 Webcam
 Windows, macOS, or Linux
-Internet connection for installing dependencies
+Working camera drivers
+Internet connection for installing Python packages
 📁 Project Structure
-air-draw/
-├── air_draw.py
+hand-tracking-basic/
+│
+├── main.py
 ├── requirements.txt
 ├── README.md
 ├── README_AR.md
 └── .gitignore
-🎨 Virtual Drawing
+📄 Main File
+main.py
 
-The project converts hand movement into drawing input.
+The main application file.
 
-Instead of using a mouse or touchscreen, the user's finger becomes the interaction tool.
+It is responsible for:
 
-This demonstrates how computer vision and hand tracking can be used to create natural human-computer interaction.
+Opening the webcam
+Processing video frames
+Running MediaPipe hand detection
+Tracking hand landmarks
+Drawing the hand structure
+Displaying the processed video
+🚀 Applications
 
-🧠 Computer Vision
+The hand-tracking system can be used as a foundation for many computer-vision applications, including:
 
-The project uses MediaPipe Hands to identify hand landmarks from the webcam stream.
+Gesture-controlled interfaces
+Virtual drawing systems
+Touchless computer control
+Finger counting
+Gesture recognition
+Interactive games
+Educational computer-vision projects
+🔮 Future Improvements
 
-OpenCV is responsible for capturing and processing the video frames, while NumPy is used for numerical operations related to the drawing system.
+Possible improvements include:
 
-🚀 Possible Applications
+Recognizing specific hand gestures
+Tracking multiple hands
+Finger counting
+Virtual mouse control
+Air drawing
+Gesture-based games
+Recording hand movement data
+Building a graphical user interface
+📚 Project Purpose
 
-This project can be extended into:
+This project was created as a practical introduction to computer vision and hand tracking using Python.
 
-Virtual whiteboards
-Touchless interfaces
-Interactive presentations
-Educational applications
-Computer vision experiments
-Gesture-controlled drawing systems
+It demonstrates how a webcam and MediaPipe can be combined to detect and visualize human hand movement in real time.
+
 📄 License
 
 This project is available for educational and personal use.
