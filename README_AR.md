@@ -272,3 +272,9 @@ Visual Output
 ---
 
 **Built with 🐍 Python, 📷 OpenCV, and ✋ MediaPipe.**
+## 👨‍💻 Developer
+
+**Awab Bashary | AwabBuilds**
+
+GitHub: **awabwdbashry-sketch**
+
