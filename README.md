@@ -1,25 +1,19 @@
-# Robot Mirror 🤖✋
+# Air Draw ✋🎨
 
-A real-time computer vision project that creates an animated robot character controlled by hand movements.
+A real-time virtual drawing project that allows you to draw in the air using your hand and webcam.
 
-The project uses MediaPipe Hands to track the user's hand and mirrors its movement through an animated robot rendered with OpenCV.
+The project uses **OpenCV** and **MediaPipe** to track the hand and detect finger movements, allowing the index finger to act as a virtual drawing tool.
 
 ## ✨ Features
 
 - Real-time hand tracking
-- Robot hand and arm mirroring
-- Finger movement tracking
-- Smooth motion using EMA smoothing
-- Animated robot body
-- Breathing animation
-- Idle movement
-- Eye blinking
-- Dynamic facial expressions
-- Sci-fi animated background
-- Glow effects
-- Particles
-- Hand motion trails
-- Real-time OpenCV rendering
+- Draw using your index finger
+- Webcam-based interaction
+- Virtual air drawing
+- Real-time drawing canvas
+- Hand landmark detection
+- Smooth finger movement tracking
+- Interactive drawing experience
 
 ## 🛠️ Technologies
 
@@ -27,118 +21,76 @@ The project uses MediaPipe Hands to track the user's hand and mirrors its moveme
 - OpenCV
 - MediaPipe
 - NumPy
-- Dataclasses
-- Math
-- Time
 
 ## ⚙️ How It Works
 
-The webcam captures the user's hand.
+The webcam captures your hand in real time.
 
-MediaPipe detects the hand landmarks and provides their coordinates.
+**MediaPipe Hands** detects the hand landmarks and tracks the position of the fingers.
 
-The project processes these landmarks and converts the hand movement into a robot pose.
+The application uses the index finger position as a virtual drawing pointer.
 
-The robot then mirrors the detected hand and finger movements.
+As the finger moves, the application follows its position and creates a drawing on the virtual canvas.
 
-Additional animation systems create:
-
-- Smooth motion
-- Breathing
-- Swaying
-- Blinking
-- Facial expressions
-- Particles
-- Glow effects
-- Hand trails
-- Animated backgrounds
-
-## 🧩 Project Architecture
-
-The project is divided into several modules.
-
-### `robot_mirror.py`
-
-Main application entry point.
-
-Responsible for:
-
-- Starting the webcam
-- Running the main loop
-- Connecting hand tracking with the robot
-- Rendering the final scene
-
-### `config.py`
-
-Central configuration module.
-
-Contains:
-
-- Colors
-- Robot proportions
-- Animation settings
-- Visual settings
-- Keyboard controls
-- Other project configuration
-
-### `hand_tracker.py`
-
-MediaPipe hand-tracking wrapper.
-
-Responsible for:
-
-- Detecting the hand
-- Reading landmarks
-- Providing simplified hand-tracking data
-
-### `animation.py`
-
-Animation and motion-processing system.
-
-Includes:
-
-- EMA smoothing
-- Blinking
-- Idle motion
-- Robot pose management
-
-### `robot.py`
-
-Robot rendering system.
-
-Responsible for drawing:
-
-- Head
-- Body
-- Arms
-- Hands
-- Fingers
-- Legs
-- Facial elements
-
-### `effects.py`
-
-Visual effects system.
-
-Includes:
-
-- Glow
-- Particles
-- Hand trails
-- Shadows
-
-### `background.py`
-
-Generates the animated sci-fi background.
-
-### `utils.py`
-
-Contains reusable mathematical and drawing utilities.
+This allows you to draw without touching a physical screen or using a mouse.
 
 ## 📦 Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/awabwdbashry-sketch/robot-mirror.git
-cd robot-mirror
+git clone https://github.com/awabwdbashry-sketch/air-draw.git
+cd air-draw
+
+Install the required dependencies:
+
+pip install -r requirements.txt
+▶️ Usage
+
+Run the application:
+
+python air_draw.py
+
+Allow the application to access your webcam.
+
+Place your hand in front of the camera and use your index finger to interact with the virtual drawing canvas.
+
+📋 Requirements
+Python 3.9+
+Webcam
+Windows, macOS, or Linux
+Internet connection for installing dependencies
+📁 Project Structure
+air-draw/
+├── air_draw.py
+├── requirements.txt
+├── README.md
+├── README_AR.md
+└── .gitignore
+🎨 Virtual Drawing
+
+The project converts hand movement into drawing input.
+
+Instead of using a mouse or touchscreen, the user's finger becomes the interaction tool.
+
+This demonstrates how computer vision and hand tracking can be used to create natural human-computer interaction.
+
+🧠 Computer Vision
+
+The project uses MediaPipe Hands to identify hand landmarks from the webcam stream.
+
+OpenCV is responsible for capturing and processing the video frames, while NumPy is used for numerical operations related to the drawing system.
+
+🚀 Possible Applications
+
+This project can be extended into:
+
+Virtual whiteboards
+Touchless interfaces
+Interactive presentations
+Educational applications
+Computer vision experiments
+Gesture-controlled drawing systems
+📄 License
+
+This project is available for educational and personal use.
